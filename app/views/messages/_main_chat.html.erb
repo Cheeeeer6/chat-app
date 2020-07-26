@@ -55,13 +55,22 @@
   </div>
 </div>
 
-<div class="chat_bottom">
-  <div class="post_content">
-    <input type="text" class="post_text" placeholder="type a message">
-    <label class="form-image">
-      <span class="image-file">画像</span>
-      <input type="file" class="hidden">
-    </label>
-  </div>
-  <input type="submit" class="post"　value="送信">
-</div>
+<%= form_with model: [@room, @message], html:{class: "chat_bottom"}, local: true do |form| %>
+  <!-- <div class="chat_bottom"> -->
+    <div class="post_content">
+    <%= form.text_field :content, class:"post_text", placeholder: "type a message" %>
+      <label class="form-image">
+        <span class="image-file">画像</span>
+        <%= form.file_field :image, class:"hidden" %>
+      </label>
+    <!--
+      <input type="text" class="post_text" placeholder="type a message">
+      <label class="form-image">
+        <span class="image-file">画像</span>
+        <input type="file" class="hidden">
+      </label>
+    -->
+    </div>
+    <input type="submit" class="post"　value="送信">
+  <!-- </div> -->
+<% end %>
