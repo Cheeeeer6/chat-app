@@ -1,17 +1,21 @@
 <div class="side_bar_header">
   <div class="user_name">
     <%= link_to "#{current_user.name}", edit_user_path(:id), method: :get %>
-    <%# <a href="#" title="ユーザー情報編集">Tom</a> %>
   </div>
   <div class="create_room">
-    <a href="#" title="チャットルーム作成">チャットを作成する</a>
+    <%= link_to "チャットを作成する", new_room_path %>
   </div>
 </div>
 <div class="rooms">
-  <div class="room">
+  <% current_user.rooms.each do |room| %>
+    <div class="room">
+      <%= link_to room.name, href:"#" %>
+    </div>
+  <% end %>
+  <%# <div class="room">
     <a href="#">Sample1</a>
   </div>
   <div class="room">
     <a href="#">Sample2</a>
-  </div>
+  </div> %>
 </div>
