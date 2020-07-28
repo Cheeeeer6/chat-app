@@ -41,14 +41,7 @@
         <span class="image-file">画像</span>
         <%= form.file_field :image, class:"hidden" %>
       </label>
-    <!--
-      <input type="text" class="post_text" placeholder="type a message">
-      <label class="form-image">
-        <span class="image-file">画像</span>
-        <input type="file" class="hidden">
-      </label>
-    -->
     </div>
-    <input type="submit" class="post"　value="送信">
-  <!-- </div> -->
+    <%= form.submit "送信", class:"post" %>
+    <%# <input type="submit" class="post"　value="送信"> %>
 <% end %>
